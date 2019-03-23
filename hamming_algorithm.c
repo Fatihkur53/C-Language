@@ -1,3 +1,4 @@
+//Hamming Algorithm with C language
 #include <stdio.h>
 
 int ishamming(int x)
