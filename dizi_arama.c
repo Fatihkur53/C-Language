@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
 
     //veri üretimi
     for(x=0;x<SIZE;++x){
-        a[x]=2*x;
+        a[x]=3*x;
     }//for sonu
 
     puts("Tamsayı arama anahtarını giriniz:\n");
