@@ -1,4 +1,6 @@
 //Hamming Algorithm with C language
+//Hamming algoritmasından biraz bahsedecek olursak hamming algoritması
+//Bitlerdeki hatayı bulmamızı ve düzeltmemiz için olanak sağlar
 #include <stdio.h>
 
 int ishamming(int x)
