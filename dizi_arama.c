@@ -13,7 +13,9 @@ int main(int argc, char const *argv[])
     int searchKey;//a dizisinde aranacak anahtar
     size_t element;//anahtarın konumunu veya -1 tutacak olan değişken
 
-    //veri üretimi
+    //veri üretimi.
+    //Burdaki verileri sizler değiştirebilirsiniz.
+    //Ona göre arama şeklinde düzenleyebilirsiniz.
     for(x=0;x<SIZE;++x){
         a[x]=3*x;
     }//for sonu
