@@ -21,7 +21,7 @@ int main(void)
 
     enum Status gameStatus;//continue,won,lost icerebilir
 
-    //�imdi saati kullanarak rastgele sayi uretcisini rastgele hale getirelim
+    //Simdi saati kullanarak rastgele sayi uretcisini rastgele hale getirelim
     srand(time(NULL));
     sum=rollDice();//zarlarin ilk atıs
     //zarlarin toplaminin durumuna gore switch case acalim
