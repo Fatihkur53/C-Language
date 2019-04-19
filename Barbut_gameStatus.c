@@ -11,21 +11,27 @@ kadar zar atmaya devam etmek zorundasiniz.Puani yapmadan once 7 atan oyuncu kayb
 #include <assert.h>
 #include <time.h>
 
-enum Status{CONTINUE,WON,LOST};
+enum Status
+{
+    CONTINUE,
+    WON,
+    LOST
+};
 int rollDice(void);
 
 int main(void)
 {
-    int sum;//atilan zarin toplami
-    int myPoint;//kazanmak icin oyuncu bu puani yapmak zorunda
+    int sum;     //atilan zarin toplami
+    int myPoint; //kazanmak icin oyuncu bu puani yapmak zorunda
 
-    enum Status gameStatus;//continue,won,lost icerebilir
+    enum Status gameStatus; //continue,won,lost icerebilir
 
     //Simdi saati kullanarak rastgele sayi uretcisini rastgele hale getirelim
     srand(time(NULL));
-    sum=rollDice();//zarlarin ilk atıs
+    sum = rollDice(); //zarlarin ilk atıs
     //zarlarin toplaminin durumuna gore switch case acalim
-    switch(sum){
+    switch (sum)
+    {
     //7 veya 11 gelirse oyun kazanilmistir
     case 7:
     case 11:
@@ -39,42 +45,49 @@ int main(void)
         break;
     default:
         gameStatus = CONTINUE;
-        myPoint=sum;
-        printf("Point is %d\n",myPoint);
-        break;//istege bagli
-    }//switch end
+        myPoint = sum;
+        printf("Point is %d\n", myPoint);
+        break; //istege bagli
+    }          //switch end
 
-    while(CONTINUE==gameStatus){//oyuncu zar atmak zorunda
-        sum=rollDice();//zarlar, tekrar et
-        if(sum==myPoint){//puan yaparak kazanildi
+    while (CONTINUE == gameStatus)
+    {                     //oyuncu zar atmak zorunda
+        sum = rollDice(); //zarlar, tekrar et
+        if (sum == myPoint)
+        { //puan yaparak kazanildi
             gameStatus = WON;
         }
-        else{
-            if(7==sum){
+        else
+        {
+            if (7 == sum)
+            {
                 gameStatus = LOST;
             }
         }
     }
-    if(WON==gameStatus){
+    if (WON == gameStatus)
+    {
         puts("Player wins ");
     }
-    else{
+    else
+    {
         puts("Player loses");
     }
     return 0;
-}//main end
+} //main end
 
 //zarlari at, toplam degeri ve sonuclari gonderecek fonksiyon
 
-int rollDice(void){
-    int die1;//ilk zar
-    int die2;//ikinci zar
-    int workSum;//zarlarin toplami
+int rollDice(void)
+{
+    int die1;    //ilk zar
+    int die2;    //ikinci zar
+    int workSum; //zarlarin toplami
 
-    die1 = 1+(rand()%6);
-    die2 = 1+(rand()%6);
-    workSum=die1+die2;
-    printf("Player rolled %d + %d = %d\n",die1,die2,workSum);
-    return workSum;//zarlarin toplamimi gonder
+    die1 = 1 + (rand() % 6);
+    die2 = 1 + (rand() % 6);
+    workSum = die1 + die2;
+    printf("Player rolled %d + %d = %d\n", die1, die2, workSum);
+    return workSum; //zarlarin toplamimi gonder
 
-}//rollDice fonksiyon sonu
+} //rollDice fonksiyon sonu
